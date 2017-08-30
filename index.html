@@ -20,14 +20,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script>
-$(document ).ready(function(){
-		if($(this).scrollTop()>200 || $(window).width()<768){
+$(document).ready(function(){
+	$(window).on('resize scroll load',function(e){
+		if($(window).scrollTop()>200 || $(window).width()<768){
  		$("#menu").css("padding-top","0px").addClass("bez");
  		}
  		else{
   		$("#menu").css("padding-top","30px").removeClass("bez");
  		}
- 		
+	})
+
 $('ul a').on('click',function(){
 	var _ = $(this);
 	var target = _.attr('href');
@@ -36,6 +38,7 @@ $('ul a').on('click',function(){
 		scrollTop:$("" + target + "").offset().top
 	},1000);
 });
+
 });
 
 </script>
