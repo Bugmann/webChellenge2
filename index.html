@@ -21,19 +21,30 @@
 
 <script>
 $(document).ready(function(){
+
+$("#button-mini").on('click',function(){
+	$("#myNavbar").slideToggle();
+});
+
+$("#mouse").on('click',function(){
+	$('html,body').animate({scrollTop:$("#about").offset().top},600);
+});
 	$(window).on('resize scroll load',function(e){
-		if($(window).scrollTop()>200 || $(window).width()<768){
+		if($(window).scrollTop()>100 || $(window).width()<768){
  		$("#menu").css("padding-top","0px").addClass("bez");
  		}
  		else{
   		$("#menu").css("padding-top","30px").removeClass("bez");
  		}
 	})
+	
+
 
 $('ul a').on('click',function(){
 	var _ = $(this);
 	var target = _.attr('href');
 	var body = $('html,body');
+	$("#myNavbar").slideUp();
 	body.animate({
 		scrollTop:$("" + target + "").offset().top
 	},1000);
@@ -50,7 +61,7 @@ $('ul a').on('click',function(){
 	<nav class="navbar navbar-default navbar-right navbar-fixed-top" id="menu">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<button type="button" class="navbar-toggle" id="button-mini" data-toggle="collapse" data-target="#myNavbar">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -73,9 +84,9 @@ $('ul a').on('click',function(){
 		</div>
 	</nav>
 	<main id="main">
-		<div class="wrapper">
-			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-6  header">
+		<div class="container">
+			<div class="row main-row">
+				<div class="col-md-6 col-sm-6  header">
 					<h1>Fresh Life</h1>    
 	   				<p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
 					<button class="btn" id="button" type="button">GET FREE NOW</button>
@@ -85,26 +96,23 @@ $('ul a').on('click',function(){
 		</div>
 	</main>
 	<section id="about">
-		<div class="wrapper">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-lg-6 col-md-6 col-md-push-6 col-sm-12 col-xs-12 about">
-						<div class="about">
+			<div class="container">
+				<div class="row about">
+					<div class="col-md-6 col-md-push-6 col-sm-12">
+					<div class="about-text">
 							<h2 class="text-center"> About Us </h2>
 							<p class="text-right">Abore Cahee magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>					
 							<p class="text-right">Nim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.  </p>
-						</div>
-					</div>			
-					<div class=" col-lg-6  col-md-pull-6 col-md-6  col-sm-12  col-xs-12 imeg">
-						<img alt="img2" src="img/about.png"/>
+					</div>	
+				</div>		
+					<div class="col-md-pull-6 col-md-6  col-sm-12  imeg">
+						<img class="img-responsive' alt="img2" src="img/about.png"/>
 					</div>
 				</div>		
 			</div>
-		</div>
 	</section>
 	<section  id="services">
-		<div class="wrapper">
-			<div class="container-fluid">
+			<div class="container">
 				<div class="row shop">
 					<div class="col-lg-6 col-md-push-6 col-md-6 col-sm-12 col-xs-12  shop-img">
 						<h2>Our Services </h2>
@@ -130,35 +138,30 @@ $('ul a').on('click',function(){
 					</div>						
 				</div>
 			</div>
-		</div>
 	</section>
 	<section  id="gallery">
-		<div class="wrapper">
-			<div class="container-fluid ">
+			<div class="container">
 				<h2>Gallery </h2>
 				<div class="col-lg-6  col-md-6 col-sm-6 col-sm-offset-3">
 					<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco labor is nisi ut aliquip ex ea commodo consequat. </p>
 				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8  col-sm-12 col-xs-12">
+			
+				<div class="row gallery-row">
+					<div class="col-md-8  col-sm-12 col-xs-12 gallery-box">
 						<img class="img-responsive" alt="galery1" src="img/gal1.jpg ">
 					</div>
-					<div class="col-md-4 col-sm-6  col-xs-12 but ">
+					<div class="col-md-4 col-sm-6  col-xs-12  gallery-box small-img-box">
 						<img class="img-responsive" alt="galery2" src="img/gal2.jpg ">
 					</div>
-					<div class="col-md-4 col-sm-6 col-xs-12 but ">
+					<div class="col-md-4 col-sm-6 col-xs-12  gallery-box small-img-box">
 						<img class="img-responsive" alt="galery3" src="img/gal3.jpg ">
 					</div>
 				</div>
-			</div>
-	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-sm-6 col-xs-12 gal">
+			<div class="col-md-6 col-sm-6 col-xs-12  gallery-box small-img-box">
 				<img class="img-responsive" alt="galery4" src="img/gal4.jpg ">
 			</div>
-			<div class="col-md-6 col-sm-6 col-xs-12 gal">
+			<div class="col-md-6 col-sm-6 col-xs-12  gallery-box small-img-box">
 				<img  class="img-responsive" alt="galery5" src="img/gal5.jpg ">
 			</div>
 		</div>
@@ -166,12 +169,11 @@ $('ul a').on('click',function(){
 			<button class="btn"> VIEW MORE </button>
 		</div>	
 	</div>
-		</div>
+	
 	</section>
 		<section  id="sub">
-			<div class="wrapper">
-				<div class="container-fluid">
-					<div class="row">
+				<div class="container">
+					<div class="row sub-row">
 						<div class="col-lg-8 col-md-6  col-sm-6 col-xs-12">
 							<div class="box-text">
 								<h2>Subscribe To Us </h2>
@@ -184,12 +186,10 @@ $('ul a').on('click',function(){
 						</div>
 					</div>
 				</div>
-			</div>
 	</section>
 	<section id="blog">
-		<div class="wrapper">
-			<div class="container-fluid">
-				<div class="row">
+			<div class="container">
+				<div class="row blog-row">
 					<div class="col-lg-12 col-md-12 col-sm-12">
 						<h2>Blog</h2>
 					</div>
@@ -247,10 +247,8 @@ $('ul a').on('click',function(){
 					</div>
 				</div>
 			</div>		
-		</div>
 	</section>
 	<section id="contact">
-		<div class="wrapper">	
 				<div class="container-fluid">
 					<div class="col-lg-12 col-md-12 col-sm-12">
 						<h2>Contact</h2>
@@ -275,7 +273,6 @@ $('ul a').on('click',function(){
 						<p><a href="tel:+0123456789">+012 345 6789 </a></p>
 					</div>	
 				</div>
-		</div>
 	</section>
 	<footer class="page-footer"> 
 		<div class="container">
