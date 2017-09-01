@@ -106,7 +106,7 @@ main {
     background-size: cover;
     background-position: center;
     min-height: 100vh;
-    height:100%;
+    height: 100%;
     position: relative;
     display: flex;
     align-items: center;
@@ -206,8 +206,8 @@ H1 {
 }
 #services .offer-label {
     background-color: white;
-   max-width: 400px;
-   width:100%;
+    max-width: 400px;
+    width: 100%;
     clear: both;
     color: black;
     font-size: 22px;
@@ -327,7 +327,7 @@ H1 {
     width: 100%;
 }
 .small-img-box {
-    padding-top: 30px;
+    padding-bottom: 30px;
 }
 #gallery .btn {
     background-color: #5585a2;
@@ -562,7 +562,7 @@ h2 {
     color: white;
 }
 #contact input::-ms-input-placeholder {
-  color: white;
+    color: white;
 }
 #contact input::-moz-placeholder {
     color: white;
@@ -660,6 +660,10 @@ footer .row {
     #about .row {
         flex-wrap: wrap;
     }
+    .small-img-box{
+    	padding-top:30px;
+    	padding-bottom:0px;
+    }
 }
 @media only screen and (max-width: 768px) {
     .navbar-default .navbar-nav > li > a {
@@ -671,8 +675,8 @@ footer .row {
     .navbar-default .active a {
         box-shadow: 0px 3px 0px #ff6033;
     }
-    #subs{
-    	width:60%;
+    #subs {
+        width: 60%;
     }
     #main .row {
         position: relative;
@@ -774,7 +778,8 @@ footer .row {
         padding: 30px 0px
     }
     #sub p,
-    #sub h2,#blog p {
+    #sub h2,
+    #blog p {
         text-align: justify;
     }
 }
@@ -783,10 +788,8 @@ footer .row {
         padding: 0;
         padding-bottom: 20px;
     }
-    #services .offer-block {
-        width: 100%;
-    }
-    #contact p,#contact a {
+    #contact p,
+    #contact a {
         color: black;
     }
     footer .row {
@@ -807,6 +810,7 @@ footer .row {
     .scroll-img {
         bottom: 10px;
     }
+   
     h2 {
         font-size: 40px;
     }
@@ -827,6 +831,11 @@ footer .row {
 @media only screen and (max-width: 450px) {
     #services h2 {
         font-size: 40px;
+    }
+        #services .offer-block {
+        width: 100%;
+       	min-width: 250px; 
+     	
     }
     #services span {
         padding-right: 60px;
